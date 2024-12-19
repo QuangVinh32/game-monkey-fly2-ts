@@ -1,0 +1,260 @@
+{
+    "balls": [
+      {
+        "ballId": 1,
+        "positionX": 100,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_yellow",
+        "speed": 10,
+        "levelId": 1
+      },
+      {
+        "ballId": 2,
+        "positionX": 225,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_yellow",
+        "speed": 12,
+        "levelId": 1
+      },
+      {
+        "ballId": 3,
+        "positionX": 350,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_yellow",
+        "speed": 8,
+        "levelId": 1
+      },
+      {
+        "ballId": 4,
+        "positionX": 475,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_yellow",
+        "speed": 15,
+        "levelId": 1
+      }
+      ,
+      {
+        "ballId": 5,
+        "positionX": 600,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_yellow",
+        "speed": 15,
+        "levelId": 1
+      },
+      {
+        "ballId": 6,
+        "positionX": 100,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_green",
+        "speed": 10,
+        "levelId": 2
+      },
+      {
+        "ballId": 7,
+        "positionX": 225,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_green",
+        "speed": 12,
+        "levelId": 2
+      },
+      {
+        "ballId": 8,
+        "positionX": 350,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_green",
+        "speed": 8,
+        "levelId": 2
+      },
+      {
+        "ballId": 9,
+        "positionX": 475,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_green",
+        "speed": 15,
+        "levelId": 2
+      }
+      ,
+      {
+        "ballId": 10,
+        "positionX": 600,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_green",
+        "speed": 15,
+        "levelId": 2
+      },
+      {
+        "ballId": 11,
+        "positionX": 100,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_blue",
+        "speed": 10,
+        "levelId": 3
+      },
+      {
+        "ballId": 12,
+        "positionX": 225,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_blue",
+        "speed": 12,
+        "levelId": 3
+      },
+      {
+        "ballId": 13,
+        "positionX": 350,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_blue",
+        "speed": 8,
+        "levelId": 3
+      },
+      {
+        "ballId": 14,
+        "positionX": 475,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_blue",
+        "speed": 15,
+        "levelId": 3
+      }
+      ,
+      {
+        "ballId": 15,
+        "positionX": 600,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_blue",
+        "speed": 15,
+        "levelId": 3
+      },
+      {
+        "ballId": 16,
+        "positionX": 100,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_orange",
+        "speed": 10,
+        "levelId": 4
+      },
+      {
+        "ballId": 17,
+        "positionX": 225,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_orange",
+        "speed": 12,
+        "levelId": 4
+      },
+      {
+        "ballId": 18,
+        "positionX": 350,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_orange",
+        "speed": 8,
+        "levelId": 4
+      },
+      {
+        "ballId": 19,
+        "positionX": 475,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_orange",
+        "speed": 15,
+        "levelId": 4
+      }
+      ,
+      {
+        "ballId": 20,
+        "positionX": 600,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_orange",
+        "speed": 15,
+        "levelId": 4
+      },
+      {
+        "ballId": 21,
+        "positionX": 100,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_red",
+        "speed": 10,
+        "levelId": 5
+      },
+      {
+        "ballId": 22,
+        "positionX": 225,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_red",
+        "speed": 12,
+        "levelId": 5
+      },
+      {
+        "ballId": 23,
+        "positionX": 350,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_red",
+        "speed": 8,
+        "levelId": 5
+      },
+      {
+        "ballId": 24,
+        "positionX": 475,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_red",
+        "speed": 15,
+        "levelId": 5
+      }
+      ,
+      {
+        "ballId": 25,
+        "positionX": 600,
+        "positionY": 420,
+        "width": 110,
+        "height": 320,
+        "texture": "monkey_and_ball_red",
+        "speed": 15,
+        "levelId": 5
+      }
+    ]
+  }
+  

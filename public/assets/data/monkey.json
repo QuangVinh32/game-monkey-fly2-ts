@@ -1,0 +1,280 @@
+{
+    "monkeys": [
+      {
+        "monkeyId": 1,
+        "positionX": 100,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_yellow",  
+        "speed": 10,
+        "ballId": 1,
+        "levelId": 1
+      },
+      {
+        "monkeyId": 2,
+        "positionX": 225,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_yellow",
+        "speed": 15,
+        "ballId": 2,
+        "levelId": 1
+      },
+      {
+        "monkeyId": 3,
+        "positionX": 350,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_yellow",
+        "speed": 15,
+        "ballId": 3,
+        "levelId": 1
+      },
+      {
+        "monkeyId": 4,
+        "positionX": 475,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_yellow",
+        "speed": 15,
+        "ballId": 4,
+        "levelId": 1
+      },
+      {
+        "monkeyId": 5,
+        "positionX": 600,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_yellow",
+        "speed": 15,
+        "ballId": 5,
+        "levelId": 1
+      },
+      {
+        "monkeyId": 6,
+        "positionX": 100,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_green",  
+        "speed": 10,
+        "ballId": 6,
+        "levelId": 2
+      },
+      {
+        "monkeyId": 7,
+        "positionX": 225,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_green",
+        "speed": 15,
+        "ballId": 7,
+        "levelId": 2
+      },
+      {
+        "monkeyId": 8,
+        "positionX": 350,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_green",
+        "speed": 15,
+        "ballId": 8,
+        "levelId": 2
+      },
+      {
+        "monkeyId": 9,
+        "positionX": 475,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_green",
+        "speed": 15,
+        "ballId": 9,
+        "levelId": 2
+      },
+      {
+        "monkeyId": 10,
+        "positionX": 600,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_green",
+        "speed": 15,
+        "ballId": 10,
+        "levelId": 2
+      },    {
+        "monkeyId": 11,
+        "positionX": 100,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_blue",  
+        "speed": 10,
+        "ballId": 11,
+        "levelId": 3
+      },
+      {
+        "monkeyId": 12,
+        "positionX": 225,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_blue",
+        "speed": 15,
+        "ballId": 12,
+        "levelId": 3
+      },
+      {
+        "monkeyId": 13,
+        "positionX": 350,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_blue",
+        "speed": 15,
+        "ballId": 13,
+        "levelId": 3
+      },
+      {
+        "monkeyId": 14,
+        "positionX": 475,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_blue",
+        "speed": 15,
+        "ballId": 14,
+        "levelId": 3
+      },
+      {
+        "monkeyId": 15,
+        "positionX": 600,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_blue",
+        "speed": 15,
+        "ballId": 15,
+        "levelId": 3
+      }
+      ,    {
+        "monkeyId": 16,
+        "positionX": 100,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_orange",  
+        "speed": 10,
+        "ballId": 16,
+        "levelId": 4
+      },
+      {
+        "monkeyId": 17,
+        "positionX": 225,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_orange",
+        "speed": 17,
+        "ballId": 17,
+        "levelId": 4
+      },
+      {
+        "monkeyId": 18,
+        "positionX": 350,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_orange",
+        "speed": 15,
+        "ballId": 18,
+        "levelId": 4
+      },
+      {
+        "monkeyId": 19,
+        "positionX": 475,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_orange",
+        "speed": 15,
+        "ballId": 19,
+        "levelId": 4
+      },
+      {
+        "monkeyId": 20,
+        "positionX": 600,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_orange",
+        "speed": 15,
+        "ballId": 20,
+        "levelId": 4
+      }
+      ,    {
+        "monkeyId": 21,
+        "positionX": 100,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_red",  
+        "speed": 10,
+        "ballId": 21,
+        "levelId": 5
+      },
+      {
+        "monkeyId": 22,
+        "positionX": 225,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_red",
+        "speed": 17,
+        "ballId": 22,
+        "levelId": 5
+      },
+      {
+        "monkeyId": 23,
+        "positionX": 350,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_red",
+        "speed": 15,
+        "ballId": 23,
+        "levelId": 5
+      },
+      {
+        "monkeyId": 24,
+        "positionX": 475,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_red",
+        "speed": 15,
+        "ballId": 24,
+        "levelId": 5
+      },
+      {
+        "monkeyId": 25,
+        "positionX": 600,
+        "positionY": 530,
+        "width": 60,
+        "height": 110,
+        "texture": "monkey_red",
+        "speed": 15,
+        "ballId": 25,
+        "levelId": 5
+      }
+      
+    ]
+  }
+  
