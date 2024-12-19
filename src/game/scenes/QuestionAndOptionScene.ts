@@ -37,7 +37,7 @@ export class QuestionAndOptionScene extends Phaser.Scene{
             volume: 3,
         });
 
-        this.questionService = new QuestionService(this,"assets/Data/question.json");
+        this.questionService = new QuestionService(this,"assets/data/question.json");
         await this.questionService.initialize(this.levelId);
 
         this.monkeyService = new MonkeyService(this, 'assets/data/monkey.json');
