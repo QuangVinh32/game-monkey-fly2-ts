@@ -1,9 +1,13 @@
+import { BallService } from "../services/BallService";
+
 export class ResultScene extends Phaser.Scene {
     public levelId: number;
     private score: number;
     private levelScores: { [key: number]: number } = {}; 
     private dotCoordinates: { x: number; y: number; color: number; levelId: number }[] = [];
     private graphics: Phaser.GameObjects.Graphics;
+     private ballService: BallService | null;
+    
 
     constructor() {
         super("ResultScene");
@@ -22,8 +26,16 @@ export class ResultScene extends Phaser.Scene {
         this.load.audio('sound_failure', 'assets/audio/sound_failure.mp3');
     }
 
-    create() {
+    async create() {
         this.add.text(this.scale.width / 2, this.scale.height / 30, "Ballons Popped", { fontSize: '22px Arial', fontStyle: "bold", color: 'black' }).setOrigin(0.5, 0);
+
+        // this.ballService = new BallService(this, 'assets/data/ball.json');
+        // await this.ballService.initialize(this.levelId);
+
+        // const levelIds = this.ballService.getUniqueLevelIds();
+        // const cols1 = levelIds.length; 
+        // console.log(`Cols (Number of unique levels) = ${cols1}`);
+
 
         this.graphics = this.add.graphics();
         this.graphics.lineStyle(1, 0x000000, 0.75);
@@ -35,7 +47,6 @@ export class ResultScene extends Phaser.Scene {
         const rows = 5;
         const cols = 5;
 
-        // Draw grid
         for (let row = 0; row < rows; row++) {
             for (let col = 0; col < cols; col++) {
                 const x = gridStartX + col * cellWidth;
