@@ -22,6 +22,7 @@
         "typescript"
     ],
     "scripts": {
+        "clean": "rm -rf dist",
         "dev": "node log.js dev & next dev -p 3005",
         "build": "node log.js build & next build",
         "dev-nolog": "next dev -p 3005",
