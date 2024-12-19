@@ -66,4 +66,15 @@ export class BallService extends BaseService<BallDTO> {
         // console.log(`Tìm thấy BallView: ${ballView ? "Có" : "Không"} cho ballId: ${ballId}`);
         return ballView || undefined;
     }
+
+    public getUniqueLevelIds(): number[] {
+        const balls = this.controller.getAllItems();
+        const levelIds: number[] = [];
+        balls.forEach(ball => {
+            if (!levelIds.includes(ball.levelId)) {
+                levelIds.push(ball.levelId);
+            }
+        });
+        return levelIds;
+    }
 }
