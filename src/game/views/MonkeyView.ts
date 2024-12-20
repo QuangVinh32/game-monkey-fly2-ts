@@ -2,9 +2,7 @@ import { MonkeyDTO } from "../dtos/MonkeyDTO";
 import BaseView from "./BaseView";
 
 export default class MonkeyView extends BaseView {
-    forEach(arg0: (monkey: any) => any) {
-        throw new Error("Method not implemented.");
-    }
+
     public monkeyData: MonkeyDTO;
     private monkey: Phaser.Physics.Arcade.Sprite;
 

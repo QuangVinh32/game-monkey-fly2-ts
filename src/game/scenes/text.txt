@@ -1,4 +1,4 @@
-import { BallService } from "../services/BallService";
+import { BallService } from "../services/BallService"; 
 import { MonkeyService } from "../services/MonkeyService";
 
 export default class LevelScene extends Phaser.Scene {
@@ -21,25 +21,19 @@ export default class LevelScene extends Phaser.Scene {
         this.completedCount = 0;
         this.score = 0;  
         this.scenesLaunched = false;
-
     }
 
     preload() {
         this.load.image('monkey_and_ball_yellow', 'assets/images/monkey_and_ball_yellow.png');
         this.load.image('monkey_yellow', 'assets/images/monkey_yellow.png');
-
         this.load.image('monkey_and_ball_green', 'assets/images/monkey_and_ball_green.png');
         this.load.image('monkey_green', 'assets/images/monkey_green.png');
-
         this.load.image('monkey_and_ball_blue', 'assets/images/monkey_and_ball_blue.png');
         this.load.image('monkey_blue', 'assets/images/monkey_blue.png');
-
         this.load.image('monkey_and_ball_orange', 'assets/images/monkey_and_ball_orange.png');
         this.load.image('monkey_orange', 'assets/images/monkey_orange.png');
-
         this.load.image('monkey_and_ball_red', 'assets/images/monkey_and_ball_red.png');
         this.load.image('monkey_red', 'assets/images/monkey_red.png');
-
         this.load.audio('sound_pop','assets/audio/sound_pop.mp3');
         this.load.audio('sound_land','assets/audio/sound_land.mp3');
     }
@@ -67,11 +61,14 @@ export default class LevelScene extends Phaser.Scene {
 
                 let monkeyDropped = false;
                 let ballClicked = false; 
+                let emptyBox: Phaser.GameObjects.Rectangle | null = null;  
+                let monkeyHasLanded = false;
 
-                let rect: Phaser.GameObjects.Graphics | null = null;
-                rect = this.add.graphics({ fillStyle: { color: 0x808080 } });
-                rect.fillRect(monkeyView.x - 25, monkeyView.y + 80, 50, 50);
-                rect.setDepth(ballView.depth - 1);
+                // Create an empty box only if the ball hasn't been clicked or dropped
+                if (!ballClicked && !monkeyHasLanded) {
+                    emptyBox = this.add.rectangle(ballView.x, ballView.y + 30, 100, 100, 0xCCCCCC, 0.2);
+                    emptyBox.setDepth(-1);
+                }
 
                 this.tweens.add({
                     targets: ballView,
@@ -84,17 +81,25 @@ export default class LevelScene extends Phaser.Scene {
                         }
                     },
                     onComplete: () => {
-                        ballView.setVisible(false);
-                        // rect.setVisible(false);
+                        ballView.setVisible(false); // Hide the ball once it lands
+
                         if (!ballClicked) {
                             this.completedCount++;
-                        }     
+                        }
+
                         this.checkAllBallsCompleted(totalBalls);
+
+                        // Hide the empty box when the ball lands
+                        if (emptyBox) {
+                            emptyBox.setVisible(false);
+                        }
+
+                        monkeyHasLanded = true;
                     }
                 });
 
                 ballView.setInteractive();
-                ballView.on('pointerdown', () => {
+                ballView.on('pointerup', () => {
                     if (this.popSound) {
                         this.popSound.play();
                     }
@@ -103,42 +108,48 @@ export default class LevelScene extends Phaser.Scene {
                     console.log(`Ball clicked: ${ballDTO.ballId}`);
                     this.handleBallComplete(ballView, monkeyView, totalBalls);
 
-                    ballView.setVisible(false);
+                    ballView.setVisible(false); // Hide the clicked ball
                     monkeyDropped = true;
                     ballClicked = true;
 
+                    // Show the empty box for the clicked ball
+                    if (emptyBox) {
+                        emptyBox.setVisible(true);
+                    }
+
+                    // Hide all monkeys linked to this ball
                     const monkeysToHide = this.monkeyService?.getMonkeyViewsByBallId(ballDTO.ballId);
                     if (monkeysToHide && monkeysToHide.length > 0) {
                         monkeysToHide.forEach(monkey => monkey.setVisible(false));
                     }
 
+                    // Show the linked monkeys for this ball
                     const linkedMonkeys = this.monkeyService?.getMonkeyViewsByBallId(ballDTO.ballId);
                     if (linkedMonkeys && linkedMonkeys.length > 0) {
                         linkedMonkeys.forEach(monkey => monkey.setVisible(true));
                     } else {
                         console.warn(`Không tìm thấy Monkey nào liên kết với ballId: ${ballDTO.ballId}`);
                     }
-                    rect.setVisible(false);
                 });
             }
         });
-    }  
+    }
 
     private handleBallComplete(ballView: any, monkeyView: any, totalBalls: number) {
-        ballView.setVisible(false); 
+        ballView.setVisible(false); // Hide the ball after it's clicked 
 
         this.tweens.add({
             targets: monkeyView,
-            y: 530, 
+            y: 530, // The landing position
             duration: 600,
-            ease: 'Since.easeOut',
+            ease: 'Power1',
             onComplete: () => {
                 if (this.landSound) {
                     this.landSound.play();
                 }
                 this.completedCount++;
                 console.log(`Ball hoàn thành. Tổng số ball hoàn thành: ${this.completedCount}`);
-                this.checkAllBallsCompleted(totalBalls); 
+                this.checkAllBallsCompleted(totalBalls); // Check if all balls are completed
             }
         });
     }

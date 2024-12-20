@@ -44,8 +44,24 @@ export class BallService extends BaseService<BallDTO> {
         }
     }
 
+    public async initializeNoView(levelId: number): Promise<void> {
+        const data = await this.loadData();
+        const balls = this.mapBalls(data); 
+        balls.forEach(ball => this.controller.addItem(ball)); 
+        const levelBalls = balls.filter(ball => ball.levelId === levelId); 
+        if (levelBalls.length === 0) {
+            console.warn(`No balls found for levelId: ${levelId}`); 
+        } else {
+            // levelBalls.forEach(ball => this.createBallView(ball)); 
+        }
+    }
+
     public getBallDTOById(ballId: number): BallDTO | undefined {
         return this.controller.getItemByProperty("ballId", ballId); 
+    }
+
+    public getBallsByLevelId(levelId: number): BallDTO[] {
+        return this.controller.getAllItems().filter(ball => ball.levelId === levelId);
     }
 
     public getAllBallDTOs(): BallDTO[] {

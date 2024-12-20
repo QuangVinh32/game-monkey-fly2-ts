@@ -6,7 +6,7 @@ export default class PlayGameScene extends Phaser.Scene {
     private isUISceneLaunched: boolean = false; 
 
     constructor() {
-        super("PlayGameScene");
+        super('PlayGameScene');
         // this.levelId = 1;
     }
 
@@ -16,12 +16,12 @@ export default class PlayGameScene extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image("button_start_big", "assets/images/button_start_big.png");
-        this.load.audio("sound_initial","assets/audio/sound_initial.mp3")
+        this.load.image('button_start_big', 'assets/images/button_start_big.png');
+        this.load.audio('sound_initial','assets/audio/sound_initial.mp3')
     }
 
     create() {
-        this.buttonSound = this.sound.add("sound_initial", {
+        this.buttonSound = this.sound.add('sound_initial', {
             volume: 1,
         });
 
@@ -29,17 +29,17 @@ export default class PlayGameScene extends Phaser.Scene {
             350,
             290,
             'Pop the ballons before the monkeys fly away.', {
-            fontSize: "17px Arial",
-            fontStyle: "bold",
-            color: "black",
+            fontSize: '17px Arial',
+            fontStyle: 'bold',
+            color: 'black',
         }).setOrigin(0.5, 0); 
         
         this.add.text(
             360,
             320,
-            'Select "Start" to begin.', {
-            fontSize: "15px Arial",
-            color: "black",
+            "Select 'Start' to begin.", {
+            fontSize: '15px Arial',
+            color: 'black',
         }).setOrigin(0.5, 0);
         
         let buttonStart = this.add.image(0, 0, 'button_start_big').setDisplaySize(
@@ -48,9 +48,9 @@ export default class PlayGameScene extends Phaser.Scene {
             );
 
         let startText = this.add.text(0, 0, 'Start', {
-            fontSize: "40px Arial",
-            fontStyle: "bold",
-            color: "black",
+            fontSize: '40px Arial',
+            fontStyle: 'bold',
+            color: 'black',
         }).setOrigin(0.5, 0.5);
     
         let buttonContainer = this.add.container(
@@ -63,7 +63,7 @@ export default class PlayGameScene extends Phaser.Scene {
             100
             ).setInteractive();
     
-        buttonContainer.on("pointerup", () => {
+        buttonContainer.on('pointerup', () => {
             if (this.buttonSound) {
                 this.buttonSound.play();
             }
@@ -73,14 +73,14 @@ export default class PlayGameScene extends Phaser.Scene {
                 scale: { from: 1, to: 1.1 }, 
                 duration: 300,
                 yoyo: true,                 
-                ease: "Sine.easeInOut",    
+                ease: 'Sine.easeInOut',    
                 onComplete: () => {
                     if (!this.isUISceneLaunched) {
-                        this.scene.launch("UIScene", { score: this.score });
+                        this.scene.launch('UIScene', { score: this.score });
                         this.isUISceneLaunched = true;
                     }
-                    this.scene.start("LevelScene")
-                    this.scene.stop("PlayGameScene");
+                    this.scene.start('LevelScene')
+                    this.scene.stop('PlayGameScene');
                 },
             });
         });

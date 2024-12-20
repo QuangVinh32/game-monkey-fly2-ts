@@ -55,6 +55,8 @@
         "ballId": 5,
         "levelId": 1
       },
+
+      
       {
         "monkeyId": 6,
         "positionX": 100,
@@ -109,7 +111,8 @@
         "speed": 15,
         "ballId": 10,
         "levelId": 2
-      },    {
+      },   
+      {
         "monkeyId": 11,
         "positionX": 100,
         "positionY": 530,

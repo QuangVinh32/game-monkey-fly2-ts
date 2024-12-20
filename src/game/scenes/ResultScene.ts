@@ -1,4 +1,14 @@
-import { BallService } from "../services/BallService";
+import { BallService } from "../services/BallService"
+;
+const CONFIG = {
+    TOTAL_GRID_WIDTH: 520,
+    TOTAL_GRID_HEIGHT: 200,
+    FONT_SIZE_TITLE: '30px Arial',
+    FONT_SIZE_LABEL: '20px',
+    FONT_SIZE_FOOTER: '12px',
+    ROW_START_Y: 85,
+    GRID_OFFSET: 25,
+};
 
 export class ResultScene extends Phaser.Scene {
     public levelId: number;
@@ -6,8 +16,9 @@ export class ResultScene extends Phaser.Scene {
     private levelScores: { [key: number]: number } = {}; 
     private dotCoordinates: { x: number; y: number; color: number; levelId: number }[] = [];
     private graphics: Phaser.GameObjects.Graphics;
-     private ballService: BallService | null;
-    
+    private ballService: BallService | null;
+    private ballsCaught: Map<number, { levelId: number, ballId: number }[]> = new Map();
+
 
     constructor() {
         super("ResultScene");
@@ -29,23 +40,47 @@ export class ResultScene extends Phaser.Scene {
     async create() {
         this.add.text(this.scale.width / 2, this.scale.height / 30, "Ballons Popped", { fontSize: '22px Arial', fontStyle: "bold", color: 'black' }).setOrigin(0.5, 0);
 
-        // this.ballService = new BallService(this, 'assets/data/ball.json');
-        // await this.ballService.initialize(this.levelId);
+        this.ballService = new BallService(this, 'assets/data/ball.json');
+        await this.ballService.initializeNoView(this.levelId);
 
-        // const levelIds = this.ballService.getUniqueLevelIds();
-        // const cols1 = levelIds.length; 
-        // console.log(`Cols (Number of unique levels) = ${cols1}`);
+        
+        const levelIds = this.ballService.getUniqueLevelIds();
+        const cols = levelIds.length; 
+        console.log(`Cols (Number of unique levels) = ${cols}`);
 
+        const ballsAtLevel = this.ballService.getBallsByLevelId(this.levelId);
+        console.log("hello",ballsAtLevel)
+        const fruitCount = ballsAtLevel.length;
+
+        let maxBalls = 0;
+        let maxLevel = levelIds[0]; // Khởi tạo với level đầu tiên
+        if (this.ballService) {
+            levelIds.forEach(levelId => {
+                const ballsAtLevel = this.ballService!.getBallsByLevelId(levelId);
+                console.log(`Level ${levelId} có ${ballsAtLevel.length} bóng.`);
+                if (ballsAtLevel.length > maxBalls) {
+                    maxBalls = ballsAtLevel.length;
+                    maxLevel = levelId;
+                }
+            });
+        } else {
+            console.error("BallService chưa được khởi tạo.");
+        }
+
+        const rows = maxBalls;
 
         this.graphics = this.add.graphics();
         this.graphics.lineStyle(1, 0x000000, 0.75);
 
         const gridStartX = 100;
         const gridStartY = 60;
-        const cellWidth = 105;
-        const cellHeight = 40;
-        const rows = 5;
-        const cols = 5;
+
+        const cellWidth = CONFIG.TOTAL_GRID_WIDTH / cols; 
+        const cellHeight = CONFIG.TOTAL_GRID_HEIGHT / rows;
+
+        // const rows = 5;
+        // Được tính bởi số level Id có trong data
+        // const cols = 5;
 
         for (let row = 0; row < rows; row++) {
             for (let col = 0; col < cols; col++) {
@@ -78,7 +113,6 @@ export class ResultScene extends Phaser.Scene {
         this.graphics.lineTo(gridStartX + cols * cellWidth, gridStartY + rows * cellHeight - 5);
         this.graphics.strokePath();
 
-        // Show level numbers
         for (let row = 0; row <= rows; row++) {
             const number = rows - row;
             this.add.text(
@@ -133,32 +167,26 @@ export class ResultScene extends Phaser.Scene {
             5: 0xFF0000  // Red
         };
     
-        // Kiểm tra nếu levelId không hợp lệ
         if (!colors[levelId]) {
             console.error(`Level ${levelId} is not supported.`);
             return;
         }
     
-        // Vẽ dấu chấm tại vị trí (x, y) tùy theo levelId và score
-        const dotColor = colors[levelId];
-        const x = startX + (levelId - 1) * cellWidth + cellWidth; // Xác định vị trí theo levelId
-        const y = startY + (5 - score) * cellHeight; // Y sẽ phụ thuộc vào điểm số
+        const dotColor = colors[levelId] || 0x000000;
+        const x = startX + (levelId - 1) * cellWidth + cellWidth; 
+        const y = startY + (5 - score) * cellHeight; 
     
         console.log(`Vẽ điểm tại x: ${x}, y: ${y}`);
     
-        // Lưu lại tọa độ dấu chấm
-        this.dotCoordinates = this.dotCoordinates.filter(dot => dot.levelId !== levelId); // Xóa các dấu chấm cùng levelId
+        this.dotCoordinates = this.dotCoordinates.filter(dot => dot.levelId !== levelId);
         this.dotCoordinates.push({ x, y, color: dotColor, levelId });
     
-        // Vẽ dấu chấm
         this.add.circle(x, y, dotRadius, dotColor);
     
-        // Nối dấu chấm với dấu chấm trước đó chỉ khi levelId liền kề
         if (this.dotCoordinates.length > 1) {
             const prevDot = this.dotCoordinates[this.dotCoordinates.length - 2];
             if (prevDot.levelId === levelId - 1) {
-                // Nếu levelId hiện tại là kế tiếp levelId trước đó, vẽ đường nối
-                this.graphics.lineStyle(2, prevDot.color, 1);
+                this.graphics.lineStyle(4, prevDot.color, 1);
                 this.graphics.lineBetween(prevDot.x, prevDot.y, x, y);
             }
         }

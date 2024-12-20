@@ -10,7 +10,7 @@ export default class QuestionView extends BaseView {
         this.questionData = questionData;
         this.createQuestion();
         this.setViewPosition(questionData.positionX,questionData.positionY);
-        // this.animateQuestion(); 
+        this.animateQuestion(); 
     }
 
     private createQuestion(): void {

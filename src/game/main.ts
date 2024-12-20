@@ -10,6 +10,7 @@ import { ResultScene } from './scenes/ResultScene';
 import { QuestionAndOptionScene } from './scenes/QuestionAndOptionScene';
 import { TrueScene } from './scenes/TrueScene';
 import { FalseScene } from './scenes/FalseScene';
+import { GameOverScene } from './scenes/GameOverScene';
 
 //  Find out more information about the Game Config at:
 //  https://newdocs.phaser.io/docs/3.70.0/Phaser.Types.Core.GameConfig
@@ -27,8 +28,8 @@ const config: Phaser.Types.Core.GameConfig = {
         default: 'arcade',
         arcade: {
             gravity: { x: 0, y: 0 },
-            // debug: true,
-            // debugShowVelocity: false
+            debug: true,
+            debugShowVelocity: false
         }
     },
     scene: [
@@ -42,7 +43,8 @@ const config: Phaser.Types.Core.GameConfig = {
         ResultScene,
         QuestionAndOptionScene,
         TrueScene,
-        FalseScene
+        FalseScene,
+        GameOverScene
     ]
 };
 
