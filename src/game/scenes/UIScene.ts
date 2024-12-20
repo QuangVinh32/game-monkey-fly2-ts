@@ -15,6 +15,10 @@ export default class UIScene extends Phaser.Scene {
         this.levelId = data.levelId || 0;
         this.score = data.score || 0; 
 
+         if (this.levelId === 1) {
+            this.totalScore = 0;
+        }
+
         if (!isNaN(this.score)) {
             this.totalScore += this.score;
         } else {

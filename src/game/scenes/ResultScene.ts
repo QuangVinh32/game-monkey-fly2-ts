@@ -1,4 +1,4 @@
-import { BallService } from "../services/BallService"
+import { BallService } from '../services/BallService'
 ;
 const CONFIG = {
     TOTAL_GRID_WIDTH: 520,
@@ -21,12 +21,17 @@ export class ResultScene extends Phaser.Scene {
 
 
     constructor() {
-        super("ResultScene");
+        super('ResultScene');
     }
 
     init(data: { levelId: number; score: number }) {
         this.levelId = data.levelId;
         this.score = data.score;
+
+        if (this.levelId === 1) {
+            this.levelScores = {};
+            this.dotCoordinates = [];
+        }
 
         this.levelScores[this.levelId] = this.score;  
         console.log(this.levelScores);
@@ -38,7 +43,7 @@ export class ResultScene extends Phaser.Scene {
     }
 
     async create() {
-        this.add.text(this.scale.width / 2, this.scale.height / 30, "Ballons Popped", { fontSize: '22px Arial', fontStyle: "bold", color: 'black' }).setOrigin(0.5, 0);
+        this.add.text(this.scale.width / 2, this.scale.height / 30, 'Ballons Popped', { fontSize: '22px Arial', fontStyle: 'bold', color: 'black' }).setOrigin(0.5, 0);
 
         this.ballService = new BallService(this, 'assets/data/ball.json');
         await this.ballService.initializeNoView(this.levelId);
@@ -49,11 +54,11 @@ export class ResultScene extends Phaser.Scene {
         console.log(`Cols (Number of unique levels) = ${cols}`);
 
         const ballsAtLevel = this.ballService.getBallsByLevelId(this.levelId);
-        console.log("hello",ballsAtLevel)
+        console.log('hello',ballsAtLevel)
         const fruitCount = ballsAtLevel.length;
 
         let maxBalls = 0;
-        let maxLevel = levelIds[0]; // Khởi tạo với level đầu tiên
+        let maxLevel = levelIds[0];
         if (this.ballService) {
             levelIds.forEach(levelId => {
                 const ballsAtLevel = this.ballService!.getBallsByLevelId(levelId);
@@ -64,7 +69,7 @@ export class ResultScene extends Phaser.Scene {
                 }
             });
         } else {
-            console.error("BallService chưa được khởi tạo.");
+            console.error('BallService chưa được khởi tạo.');
         }
 
         const rows = maxBalls;
@@ -119,12 +124,12 @@ export class ResultScene extends Phaser.Scene {
                 gridStartX - 20,
                 gridStartY + row * cellHeight - 10,
                 number.toString(),
-                { fontSize: "18px Arial", color: 'black' }
+                { fontSize: '18px Arial', color: 'black' }
             );
         }
 
         const fruitNames = [
-            "yellow", "green", "blue", "orange", "red"
+            'yellow', 'green', 'blue', 'orange', 'red'
         ];
 
         for (let col = 0; col < cols; col++) {

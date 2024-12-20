@@ -78,11 +78,13 @@ export class TrueScene extends Phaser.Scene {
                 onComplete: () => {
                     if (this.levelId >= cols) {
                         this.levelId = 1; 
+
                     } else {
                         this.levelId += 1; 
                     }
 
                     this.scene.start('LevelScene', { levelId: this.levelId });
+                    this.scene.launch('UIScene', { levelId: this.levelId });
                     this.scene.stop('ResultScene');
                     this.scene.stop('QuestionAndOptionScene');
                 },
