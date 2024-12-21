@@ -18,6 +18,8 @@ export default class PlayGameScene extends Phaser.Scene {
     preload() {
         this.load.image('button_start_big', 'assets/images/button_start_big.png');
         this.load.audio('sound_initial','assets/audio/sound_initial.mp3')
+
+        const scale = window.devicePixelRatio;
     }
 
     create() {

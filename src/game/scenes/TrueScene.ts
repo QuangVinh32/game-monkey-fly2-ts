@@ -39,6 +39,7 @@ export class TrueScene extends Phaser.Scene {
             color: 'black',
             resolution: 2,
         }).setOrigin(0.5, 0);
+        // .setResolution(2);
 
         const message = this.levelId >= cols
             ? "Select 'Start' to play again."
@@ -48,6 +49,7 @@ export class TrueScene extends Phaser.Scene {
             fontSize: '15px Arial',
             color: 'black',
         }).setOrigin(0.5, 0);
+        // .setResolution(2);
 
         let buttonStart = this.add.image(0, 0, 'button_start_small').setDisplaySize(130, 130);
 

@@ -4,8 +4,8 @@ export default class UIScene extends Phaser.Scene {
     private totalScore: number = 0;
 
     private readonly SCORE_TEXT_X_POSITION = 10;
-    private readonly SCORE_TEXT_Y_POSITION = 20;
-    private readonly SCORE_FONT_SIZE = '17px Arial';
+    private readonly SCORE_TEXT_Y_POSITION = 14;
+    private readonly SCORE_FONT_SIZE = '18px Georgia';
 
     constructor() {
         super("UIScene");
@@ -34,8 +34,9 @@ export default class UIScene extends Phaser.Scene {
             `Score: ${this.totalScore}`, { 
                 fontSize: this.SCORE_FONT_SIZE, 
                 // fontStyle: "bold", 
-                color: 'black' 
+                color: 'black',
             }
-        ).setResolution(2);
+        );
+        // .setResolution(2);
     }
 }

@@ -23,12 +23,18 @@ const config: Phaser.Types.Core.GameConfig = {
     scale: {
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH,
-            
+        max: {
+            width: 700, // Kích thước tối đa cho chiều rộng
+            height: 600, // Kích thước tối đa cho chiều cao
+        },
+        min: {
+            width: 320, // Kích thước tối thiểu cho chiều rộng
+            height: 240, // Kích thước tối thiểu cho chiều cao
+        }
     },
+    
 
-    pixelArt: false, // Tắt chế độ pixelArt nếu không cần, giữ ảnh sắc nét
-    // resolution: 3,
-
+    pixelArt: false, 
 
     physics: {
         default: 'arcade',
