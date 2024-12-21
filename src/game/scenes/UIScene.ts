@@ -36,6 +36,6 @@ export default class UIScene extends Phaser.Scene {
                 // fontStyle: "bold", 
                 color: 'black' 
             }
-        );
+        ).setResolution(2);
     }
 }

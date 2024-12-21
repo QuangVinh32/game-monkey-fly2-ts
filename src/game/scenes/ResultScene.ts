@@ -43,7 +43,8 @@ export class ResultScene extends Phaser.Scene {
     }
 
     async create() {
-        this.add.text(this.scale.width / 2, this.scale.height / 30, 'Ballons Popped', { fontSize: '22px Arial', fontStyle: 'bold', color: 'black' }).setOrigin(0.5, 0);
+        this.add.text(this.scale.width / 2, this.scale.height / 30, 'Ballons Popped', { fontSize: '22px Arial', fontStyle: 'bold', color: 'black', 
+        }).setOrigin(0.5, 0).setResolution(2);
 
         this.ballService = new BallService(this, 'assets/data/ball.json');
         await this.ballService.initializeNoView(this.levelId);
@@ -52,10 +53,6 @@ export class ResultScene extends Phaser.Scene {
         const levelIds = this.ballService.getUniqueLevelIds();
         const cols = levelIds.length; 
         console.log(`Cols (Number of unique levels) = ${cols}`);
-
-        const ballsAtLevel = this.ballService.getBallsByLevelId(this.levelId);
-        console.log('hello',ballsAtLevel)
-        const fruitCount = ballsAtLevel.length;
 
         let maxBalls = 0;
         let maxLevel = levelIds[0];
@@ -125,7 +122,7 @@ export class ResultScene extends Phaser.Scene {
                 gridStartY + row * cellHeight - 10,
                 number.toString(),
                 { fontSize: '18px Arial', color: 'black' }
-            );
+            ).setResolution(2);
         }
 
         const fruitNames = [
@@ -153,7 +150,7 @@ export class ResultScene extends Phaser.Scene {
                 gridStartY + rows * cellHeight + 10,
                 fruitName,
                 { fontSize: '15px Arial', color: textColor }
-            );
+            ).setResolution(2);
         }
 
         Object.keys(this.levelScores).forEach(levelId => {

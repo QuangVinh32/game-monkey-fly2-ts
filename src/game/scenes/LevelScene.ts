@@ -40,6 +40,9 @@ export default class LevelScene extends Phaser.Scene {
         this.load.image('monkey_and_ball_red', 'assets/images/monkey_and_ball_red.png');
         this.load.image('monkey_red', 'assets/images/monkey_red.png');
 
+        this.load.image('shadow', 'assets/images/shadow.png');
+
+
         this.load.audio('sound_pop','assets/audio/sound_pop.mp3');
         this.load.audio('sound_land','assets/audio/sound_land.mp3');
     }
@@ -68,10 +71,10 @@ export default class LevelScene extends Phaser.Scene {
                 let monkeyDropped = false;
                 let ballClicked = false; 
 
-                let rect: Phaser.GameObjects.Graphics | null = null;
-                rect = this.add.graphics({ fillStyle: { color: 0x808080 } });
-                rect.fillRect(monkeyView.x - 25, monkeyView.y + 80, 50, 50);
-                rect.setDepth(ballView.depth - 1);
+                let shadow = this.add.image(monkeyView.x, monkeyView.y + 110, 'shadow').setOrigin(0.5, 0.5).setDisplaySize(monkeyView.width, monkeyView.height);
+                shadow.setDepth(monkeyView.depth - 1);
+                // shadow.setScale(0.75);
+                // shadow.setAlpha(0.5); // Điều chỉnh độ trong suốt của bóng đổ
 
                 this.tweens.add({
                     targets: ballView,
@@ -118,7 +121,7 @@ export default class LevelScene extends Phaser.Scene {
                     } else {
                         console.warn(`Không tìm thấy Monkey nào liên kết với ballId: ${ballDTO.ballId}`);
                     }
-                    rect.setVisible(false);
+                    shadow.setVisible(false);
                 });
             }
         });

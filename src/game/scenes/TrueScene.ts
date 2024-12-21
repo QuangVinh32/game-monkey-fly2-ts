@@ -37,6 +37,7 @@ export class TrueScene extends Phaser.Scene {
             fontSize: '17px Arial',
             fontStyle: 'bold',
             color: 'black',
+            resolution: 2,
         }).setOrigin(0.5, 0);
 
         const message = this.levelId >= cols

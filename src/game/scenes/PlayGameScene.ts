@@ -32,7 +32,7 @@ export default class PlayGameScene extends Phaser.Scene {
             fontSize: '17px Arial',
             fontStyle: 'bold',
             color: 'black',
-        }).setOrigin(0.5, 0); 
+        }).setOrigin(0.5, 0); // .setResolution(2);
         
         this.add.text(
             360,
@@ -40,7 +40,7 @@ export default class PlayGameScene extends Phaser.Scene {
             "Select 'Start' to begin.", {
             fontSize: '15px Arial',
             color: 'black',
-        }).setOrigin(0.5, 0);
+        }).setOrigin(0.5, 0); // .setResolution(2);
         
         let buttonStart = this.add.image(0, 0, 'button_start_big').setDisplaySize(
             165,
@@ -51,7 +51,7 @@ export default class PlayGameScene extends Phaser.Scene {
             fontSize: '40px Arial',
             fontStyle: 'bold',
             color: 'black',
-        }).setOrigin(0.5, 0.5);
+        }).setOrigin(0.5, 0.5); //.setResolution(2);
     
         let buttonContainer = this.add.container(
             this.scale.width / 2,

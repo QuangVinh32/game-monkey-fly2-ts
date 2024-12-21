@@ -21,9 +21,15 @@ const config: Phaser.Types.Core.GameConfig = {
     parent: 'phaser-example',
     backgroundColor: '#FFFFFF',
     scale: {
-            mode: Phaser.Scale.FIT, 
-            autoCenter: Phaser.Scale.CENTER_BOTH,
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH,
+            
     },
+
+    pixelArt: false, // Tắt chế độ pixelArt nếu không cần, giữ ảnh sắc nét
+    // resolution: 3,
+
+
     physics: {
         default: 'arcade',
         arcade: {

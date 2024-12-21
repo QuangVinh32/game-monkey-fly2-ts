@@ -26,7 +26,9 @@ export default class OptionView extends BaseView {
             color: 'black',
             fontStyle: 'bold'
         })
-            .setOrigin(0.5, 0.5);
+            .setOrigin(0.5, 0.5)
+            .setResolution(2);
+            
 
         this.add(this.buttonOption);
         this.add(this.textQuestion);
