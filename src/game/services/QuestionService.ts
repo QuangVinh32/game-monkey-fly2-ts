@@ -1,7 +1,7 @@
-import { QuestionController } from "../controllers/QuestionController";
-import QuestionDTO from "../dtos/QuestionDTO";
-import QuestionView from "../views/QuestionView";
-import BaseService from "./BaseService";
+import { QuestionController } from '../controllers/QuestionController';
+import QuestionDTO from '../dtos/QuestionDTO';
+import QuestionView from '../views/QuestionView';
+import BaseService from './BaseService';
 
 
 export default class QuestionService extends BaseService<QuestionDTO>{
@@ -16,7 +16,7 @@ export default class QuestionService extends BaseService<QuestionDTO>{
 
     private mapQuestions(data: any): QuestionDTO[] {
         const questions = Array.isArray(data.questions) ? data.questions : [];
-        if (!questions.length) console.error("Invalid or missing questions data:", data.questions);
+        if (!questions.length) console.error('Invalid or missing questions data:', data.questions);
 
         return questions.map((questionData: any) => new QuestionDTO(
             questionData.questionId,
@@ -58,7 +58,7 @@ export default class QuestionService extends BaseService<QuestionDTO>{
     }
 
     public getQuestionDTOById(levelId: number): QuestionDTO | undefined {
-        return this.controller.getItemByProperty("levelId", levelId);
+        return this.controller.getItemByProperty('levelId', levelId);
     }
     
     public getAllQuestionDTOs(): QuestionDTO[] {

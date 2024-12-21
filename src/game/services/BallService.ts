@@ -1,7 +1,7 @@
-import { BallController } from "../controllers/BallController";
-import { BallDTO } from "../dtos/BallDTO";
-import BallView from "../views/BallView";
-import BaseService from "./BaseService";
+import { BallController } from '../controllers/BallController';
+import { BallDTO } from '../dtos/BallDTO';
+import BallView from '../views/BallView';
+import BaseService from './BaseService';
 
 export class BallService extends BaseService<BallDTO> {
     private controller: BallController;
@@ -15,10 +15,10 @@ export class BallService extends BaseService<BallDTO> {
     private mapBalls(data: any): BallDTO[] {
         const balls = Array.isArray(data.balls) ? data.balls : [];
         if (!balls.length) {
-            console.error("Invalid or missing balls data:", data.balls);
+            console.error('Invalid or missing balls data:', data.balls);
         }
 
-        // console.log("Mapped balls:", balls);
+        // console.log('Mapped balls:', balls);
 
         return balls.map((ballData: any) => new BallDTO(
             ballData.ballId,
@@ -57,7 +57,7 @@ export class BallService extends BaseService<BallDTO> {
     }
 
     public getBallDTOById(ballId: number): BallDTO | undefined {
-        return this.controller.getItemByProperty("ballId", ballId); 
+        return this.controller.getItemByProperty('ballId', ballId); 
     }
 
     public getBallsByLevelId(levelId: number): BallDTO[] {
@@ -79,7 +79,7 @@ export class BallService extends BaseService<BallDTO> {
 
     public getBallViewById(ballId: number): BallView | undefined {
         const ballView = this.ballViews.find(view => view.ballData.ballId === ballId);
-        // console.log(`Tìm thấy BallView: ${ballView ? "Có" : "Không"} cho ballId: ${ballId}`);
+        // console.log(`Tìm thấy BallView: ${ballView ? 'Có' : 'Không'} cho ballId: ${ballId}`);
         return ballView || undefined;
     }
 

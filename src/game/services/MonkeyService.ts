@@ -1,7 +1,7 @@
-import { MonkeyController } from "../controllers/MonkeyController";
-import { MonkeyDTO } from "../dtos/MonkeyDTO";
-import MonkeyView from "../views/MonkeyView";
-import BaseService from "./BaseService";
+import { MonkeyController } from '../controllers/MonkeyController';
+import { MonkeyDTO } from '../dtos/MonkeyDTO';
+import MonkeyView from '../views/MonkeyView';
+import BaseService from './BaseService';
 
 export class MonkeyService extends BaseService<MonkeyDTO>{
 
@@ -16,10 +16,10 @@ export class MonkeyService extends BaseService<MonkeyDTO>{
     private mapMonkeys(data: any): MonkeyDTO[] {
         const monkeys = Array.isArray(data.monkeys) ? data.monkeys : [];
         if (!monkeys.length) {
-            console.error("Invalid or missing monkeys data:", data.monkeys);
+            console.error('Invalid or missing monkeys data:', data.monkeys);
         }
     
-        // console.log("Mapped monkeys:", monkeys);
+        // console.log('Mapped monkeys:', monkeys);
     
         return monkeys.map((monkeyData: any) => new MonkeyDTO(
             monkeyData.monkeyId,
@@ -47,7 +47,7 @@ export class MonkeyService extends BaseService<MonkeyDTO>{
     }
     
     public getMonkeyDTOById(monkeyId: number): MonkeyDTO | undefined {
-        return this.controller.getItemByProperty("monkeyId", monkeyId); 
+        return this.controller.getItemByProperty('monkeyId', monkeyId); 
     }
     
     public getAllMonkeyDTOs(): MonkeyDTO[] {
@@ -70,13 +70,13 @@ export class MonkeyService extends BaseService<MonkeyDTO>{
     
     public getMonkeyViewById(monkeyId: number): MonkeyView | undefined {
         const monkeyView = this.monkeyViews.find(view => view.monkeyData.monkeyId === monkeyId);
-        // console.log(`Tìm thấy MonkeyView: ${monkeyView ? "Có" : "Không"} cho monkeyId: ${monkeyId}`);
+        // console.log(`Tìm thấy MonkeyView: ${monkeyView ? 'Có' : 'Không'} cho monkeyId: ${monkeyId}`);
         return monkeyView || undefined;
     }
 
     public getMonkeyViewBylevelId(levelId: number): MonkeyView | undefined {
         const monkeyView = this.monkeyViews.find(view => view.monkeyData.levelId === levelId);
-        // console.log(`Tìm thấy MonkeyView: ${monkeyView ? "Có" : "Không"} cho LevelId: ${levelId}`);
+        // console.log(`Tìm thấy MonkeyView: ${monkeyView ? 'Có' : 'Không'} cho LevelId: ${levelId}`);
         return monkeyView; 
     }
 

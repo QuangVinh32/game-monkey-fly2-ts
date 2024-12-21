@@ -1,5 +1,5 @@
-import OpitionDTO from "../dtos/OptionDTO";
-import BaseView from "./BaseView";
+import OpitionDTO from '../dtos/OptionDTO';
+import BaseView from './BaseView';
 
 export default class OptionView extends BaseView {
     public optionData: OpitionDTO;
@@ -16,7 +16,7 @@ export default class OptionView extends BaseView {
     }
 
     private createOption(): void {
-        this.buttonOption = this.scene.add.image(0, 0, "button_choice")
+        this.buttonOption = this.scene.add.image(0, 0, 'button_choice')
             .setDisplaySize(this.optionData.width, this.optionData.height)
             .setOrigin(0.5, 0.5)
             .setInteractive();
@@ -24,7 +24,7 @@ export default class OptionView extends BaseView {
         this.textQuestion = this.scene.add.text(0, 0, this.optionData.value.toString(), {
             fontSize: '45px',
             color: 'black',
-            fontStyle: "bold"
+            fontStyle: 'bold'
         })
             .setOrigin(0.5, 0.5);
 

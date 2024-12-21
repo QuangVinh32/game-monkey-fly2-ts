@@ -1,4 +1,4 @@
-import { BaseDTO } from "./BaseDTO";
+import { BaseDTO } from './BaseDTO';
 
 export default class QuestionDTO extends BaseDTO {
     private _questionId: number;

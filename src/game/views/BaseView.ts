@@ -1,4 +1,4 @@
-import { Scene, GameObjects } from "phaser";
+import { Scene, GameObjects } from 'phaser';
 
 export default class BaseView extends Phaser.GameObjects.Container {
     public scene: Phaser.Scene;

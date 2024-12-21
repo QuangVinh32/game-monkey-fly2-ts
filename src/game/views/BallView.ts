@@ -1,5 +1,5 @@
-import { BallDTO } from "../dtos/BallDTO";
-import BaseView from "./BaseView";
+import { BallDTO } from '../dtos/BallDTO';
+import BaseView from './BaseView';
 
 export default class BallView extends BaseView {
     public ballData: BallDTO;
@@ -21,7 +21,7 @@ export default class BallView extends BaseView {
         )
         .setDisplaySize(this.ballData.width, this.ballData.height)
         .setOrigin(0.5, 0.5);
-        // console.log("Ball created at:", this.ballData.texture);
+        // console.log('Ball created at:', this.ballData.texture);
         this.add(this.ball);
     }
 }

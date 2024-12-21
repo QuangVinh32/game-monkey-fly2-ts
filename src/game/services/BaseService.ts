@@ -17,7 +17,7 @@ export default class BaseService<T> {
             const data = await response.json();
             return data;
         } catch (error) {
-            console.error("Error loading data:", error);
+            console.error('Error loading data:', error);
             throw error;
         }
     }

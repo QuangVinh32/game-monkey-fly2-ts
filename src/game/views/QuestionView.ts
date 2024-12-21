@@ -1,5 +1,5 @@
-import QuestionDTO from "../dtos/QuestionDTO";
-import BaseView from "./BaseView";
+import QuestionDTO from '../dtos/QuestionDTO';
+import BaseView from './BaseView';
 
 export default class QuestionView extends BaseView {
     public questionData: QuestionDTO;
@@ -17,7 +17,7 @@ export default class QuestionView extends BaseView {
         this.textQuestion = this.scene.add.text(0,0, this.questionData.text, {
             fontSize: '20px Arial',
             color: 'black',
-            fontStyle: "bold"
+            fontStyle: 'bold'
         });
         this.add(this.textQuestion);
     }
