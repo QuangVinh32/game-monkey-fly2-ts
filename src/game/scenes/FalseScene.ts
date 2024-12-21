@@ -28,7 +28,7 @@ export class FalseScene extends Phaser.Scene{
             fontSize: "17px Arial",
             fontStyle: "bold",
             color: "black",
-        }).setOrigin(0.5, 0); 
+        }).setOrigin(0.5, 0).setResolution(2); 
         
         this.add.text(
             350,
@@ -36,7 +36,7 @@ export class FalseScene extends Phaser.Scene{
             "Let's try that again.", {
             fontSize: "15px Arial",
             color: "black",
-        }).setOrigin(0.5, 0);
+        }).setOrigin(0.5, 0).setResolution(2);
         
         let buttonStart = this.add.image(0, 0, 'button_start_small').setDisplaySize(
             130,
@@ -47,7 +47,7 @@ export class FalseScene extends Phaser.Scene{
             fontSize: "30px Arial",
             fontStyle: "bold",
             color: "black",
-        }).setOrigin(0.5, 0.5);
+        }).setOrigin(0.5, 0.5).setResolution(2);
     
         let buttonContainer = this.add.container(
             this.scale.width / 2,

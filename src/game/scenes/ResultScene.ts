@@ -44,8 +44,8 @@ export class ResultScene extends Phaser.Scene {
 
     async create() {
         this.add.text(this.scale.width / 2, this.scale.height / 50, 'Ballons Popped', { fontSize: '25px Arial', fontStyle: 'bold', color: 'black', 
-        }).setOrigin(0.5, 0);
-        // .setResolution(2);
+        }).setOrigin(0.5, 0)
+        .setResolution(2);
 
         this.ballService = new BallService(this, 'assets/data/ball.json');
         await this.ballService.initializeNoView(this.levelId);
