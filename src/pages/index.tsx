@@ -12,7 +12,7 @@ export default function Home() {
         <>
             <Head>
                 <title>YoTech - Game Monkey Fly</title>
-                <meta name="description" content="Game Yotech Monkey Fly" />
+                <meta name="description" content="Yotech - Game Monkey Fly" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.png" />
             </Head>
