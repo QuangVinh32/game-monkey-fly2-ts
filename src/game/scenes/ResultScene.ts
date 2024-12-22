@@ -1,7 +1,7 @@
-import { BallService } from '../services/BallService'
-;
+import { BallService } from '../services/BallService';
+
 const CONFIG = {
-    TOTAL_GRID_WIDTH: 520,
+    TOTAL_GRID_WIDTH: 550,
     TOTAL_GRID_HEIGHT: 200,
     FONT_SIZE_TITLE: '30px Arial',
     FONT_SIZE_LABEL: '20px',
@@ -17,14 +17,12 @@ export class ResultScene extends Phaser.Scene {
     private dotCoordinates: { x: number; y: number; color: number; levelId: number }[] = [];
     private graphics: Phaser.GameObjects.Graphics;
     private ballService: BallService | null;
-    private ballsCaught: Map<number, { levelId: number, ballId: number }[]> = new Map();
-
 
     constructor() {
         super('ResultScene');
     }
 
-    init(data: { levelId: number; score: number }) {
+    init(data: { levelId: number; score: number }){
         this.levelId = data.levelId;
         this.score = data.score;
 
@@ -75,7 +73,7 @@ export class ResultScene extends Phaser.Scene {
         this.graphics = this.add.graphics();
         this.graphics.lineStyle(1, 0x000000, 0.95);
 
-        const gridStartX = 100;
+        const gridStartX = 70;
         const gridStartY = 60;
 
         const cellWidth = CONFIG.TOTAL_GRID_WIDTH / cols; 
@@ -93,6 +91,7 @@ export class ResultScene extends Phaser.Scene {
                 if (col > 0) {
                     this.graphics.strokeLineShape(new Phaser.Geom.Line(x, y, x, y + cellHeight));
                 }
+                
                 if (row < rows - 1) {
                     this.graphics.strokeLineShape(new Phaser.Geom.Line(x, y + cellHeight, x + cellWidth, y + cellHeight));
                 }
@@ -123,8 +122,8 @@ export class ResultScene extends Phaser.Scene {
                 gridStartY + row * cellHeight - 10,
                 number.toString(),
                 { fontSize: '18px Arial', color: 'black' }
-            );
-            // .setResolution(2);
+            )
+            .setResolution(2);
         }
 
         const fruitNames = [

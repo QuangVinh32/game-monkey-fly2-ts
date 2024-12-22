@@ -3,9 +3,9 @@ export default class UIScene extends Phaser.Scene {
     private score: number = 0;
     private totalScore: number = 0;
 
-    private readonly SCORE_TEXT_X_POSITION = 10;
-    private readonly SCORE_TEXT_Y_POSITION = 14;
-    private readonly SCORE_FONT_SIZE = '18px Inter';
+    private readonly SCORE_TEXT_X_POSITION = 5;
+    private readonly SCORE_TEXT_Y_POSITION = 17;
+    private readonly SCORE_FONT_SIZE = '17px Inter';
 
     constructor() {
         super("UIScene");

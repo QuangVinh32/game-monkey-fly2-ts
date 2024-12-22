@@ -121,7 +121,7 @@ export default class LevelScene extends Phaser.Scene {
                     } else {
                         console.warn(`Không tìm thấy Monkey nào liên kết với ballId: ${ballDTO.ballId}`);
                     }
-                    shadow.setVisible(false);
+                    // shadow.setVisible(false);
                 });
             }
         });
