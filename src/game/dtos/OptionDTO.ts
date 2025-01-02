@@ -1,4 +1,4 @@
-export default class OpitionDTO{
+export default class OptionDTO{
     private _optionId: number;
     private _isAnswer: boolean;
     private _value: number;

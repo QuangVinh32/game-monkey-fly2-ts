@@ -18,8 +18,6 @@ export class BallService extends BaseService<BallDTO> {
             console.error('Invalid or missing balls data:', data.balls);
         }
 
-        // console.log('Mapped balls:', balls);
-
         return balls.map((ballData: any) => new BallDTO(
             ballData.ballId,
             ballData.positionX,

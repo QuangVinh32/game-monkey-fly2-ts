@@ -27,7 +27,7 @@ export default class OptionView extends BaseView {
             fontStyle: 'bold'
         })
             .setOrigin(0.5, 0.5)
-            // .setResolution(2);
+            .setResolution(2);
             
 
         this.add(this.buttonOption);

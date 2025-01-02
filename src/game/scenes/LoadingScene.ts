@@ -9,9 +9,13 @@ export default class LoadingScene extends Phaser.Scene {
             frameHeight: 64,
             endFrame: 9
         });
+        this.load.image('logo','assets/images/logo.png');
     }
     
     create() {
+
+        // this.add.image(100,100,'logo').setOrigin(0.5,0.5).setDisplaySize(100,100);
+
         const titleText = this.add.text(this.scale.width / 2 , this.scale.height / 2 - 80, 'Monkey Fly', {
             fontSize: '30px Arial',
             fontStyle: "bold",

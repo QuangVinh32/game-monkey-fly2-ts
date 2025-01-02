@@ -32,10 +32,8 @@ const config: Phaser.Types.Core.GameConfig = {
             height: 240, // Kích thước tối thiểu cho chiều cao
         }
     },
-    
 
     pixelArt: false, 
-
     physics: {
         default: 'arcade',
         arcade: {
@@ -49,9 +47,10 @@ const config: Phaser.Types.Core.GameConfig = {
         MainMenu,
         MainGame,
         LoadingScene,
-        PlayGameScene,
         UIScene,
         LevelScene,
+        PlayGameScene,
+
         ResultScene,
         QuestionAndOptionScene,
         TrueScene,
