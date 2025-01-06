@@ -11,8 +11,8 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>YoTech - Game Monkey Fly</title>
-                <meta name="description" content="Yotech - Game Monkey Fly" />
+                <title>YOTECH - GAME MONKEY FLY</title>
+                <meta name="description" content="YOTECH - GAME MONKEY FLY" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.png" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"/>

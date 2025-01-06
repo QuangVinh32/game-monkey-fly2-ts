@@ -1,0 +1,4 @@
+[submodule "mct-common"]
+	path = mct-common
+	url = https://github.com/YoloGameStudio/mct-common.git
+	branch = release
