@@ -1,4 +1,4 @@
-import { BaseDTO } from './BaseDTO';
+import { BaseDTO } from "mct-commom";
 
 export class BallDTO extends BaseDTO {
     private _ballId: number;

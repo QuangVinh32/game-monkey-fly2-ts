@@ -1,5 +1,6 @@
+import { BaseView } from 'mct-commom';
 import { BallDTO } from '../dtos/BallDTO';
-import BaseView from './BaseView';
+// import BaseView from './BaseView';
 
 export default class BallView extends BaseView {
     public ballData: BallDTO;

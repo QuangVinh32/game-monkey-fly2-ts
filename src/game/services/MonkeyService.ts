@@ -1,7 +1,8 @@
+import { BaseService } from 'mct-commom';
 import { MonkeyController } from '../controllers/MonkeyController';
 import { MonkeyDTO } from '../dtos/MonkeyDTO';
 import MonkeyView from '../views/MonkeyView';
-import BaseService from './BaseService';
+// import BaseService from './BaseService';
 
 export class MonkeyService extends BaseService<MonkeyDTO>{
 

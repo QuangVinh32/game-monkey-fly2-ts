@@ -1,7 +1,8 @@
+import { BaseService } from 'mct-commom';
 import { BallController } from '../controllers/BallController';
 import { BallDTO } from '../dtos/BallDTO';
 import BallView from '../views/BallView';
-import BaseService from './BaseService';
+// import BaseService from './BaseService';
 
 export class BallService extends BaseService<BallDTO> {
     private controller: BallController;

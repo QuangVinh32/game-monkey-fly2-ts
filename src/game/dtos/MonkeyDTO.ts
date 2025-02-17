@@ -1,5 +1,6 @@
 // MonkeyDTO.ts
-import { BaseDTO } from './BaseDTO';
+
+import { BaseDTO } from "mct-commom";
 
 export class MonkeyDTO extends BaseDTO {
     private _monkeyId: number;

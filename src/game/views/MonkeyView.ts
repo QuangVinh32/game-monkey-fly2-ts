@@ -1,5 +1,6 @@
+import { BaseView } from "mct-commom";
 import { MonkeyDTO } from "../dtos/MonkeyDTO";
-import BaseView from "./BaseView";
+// import BaseView from "./BaseView";
 
 export default class MonkeyView extends BaseView {
 

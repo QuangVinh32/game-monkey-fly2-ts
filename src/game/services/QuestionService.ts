@@ -1,8 +1,7 @@
+import { BaseService } from 'mct-commom';
 import { QuestionController } from '../controllers/QuestionController';
 import QuestionDTO from '../dtos/QuestionDTO';
 import QuestionView from '../views/QuestionView';
-import BaseService from './BaseService';
-
 
 export default class QuestionService extends BaseService<QuestionDTO>{
 
